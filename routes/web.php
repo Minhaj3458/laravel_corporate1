@@ -25,4 +25,9 @@ Auth::routes();
 // frontend route
 
 //home route
-Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('');
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('index');
+Route::get('/contact', [App\Http\Controllers\Frontend\HomeController::class, 'contact'])->name('contact');
+Route::get('/services', [App\Http\Controllers\Frontend\HomeController::class, 'services'])->name('services');
+Route::get('/mission', [App\Http\Controllers\Frontend\HomeController::class, 'mission'])->name('mission');
+Route::get('/vission', [App\Http\Controllers\Frontend\HomeController::class, 'vission'])->name('vission');
+Route::get('/team_members', [App\Http\Controllers\Frontend\HomeController::class, 'team_members'])->name('team_members');

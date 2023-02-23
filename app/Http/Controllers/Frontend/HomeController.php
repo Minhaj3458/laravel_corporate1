@@ -7,59 +7,33 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('layouts.frontend.app');
+        return view('frontend_pages.index');
+    }
+    public function about()
+    {
+        return view('frontend_pages.about');
+    }
+    public function contact()
+    {
+        return view('frontend_pages.contact');
+    }
+    public function mission()
+    {
+        return view('frontend_pages.mission');
+    }
+    public function vission()
+    {
+        return view('frontend_pages.vission');
+    }
+    public function services()
+    {
+        return view('frontend_pages.services');
+    }
+    public function team_members()
+    {
+        return view('frontend_pages.team_members');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
