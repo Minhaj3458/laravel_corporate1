@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.frontend.partials.app');
+        return view('layouts.frontend.app');
     }
 
     /**
