@@ -1,11 +1,11 @@
 @extends('layouts.backend.app')
 @section('title')
-create company information
+create slider
 @endsection
-@section('company_information')
+@section('slider')
 active
 @endsection
-@section('create_company_information')
+@section('create_slider')
 active
 @endsection
 
@@ -15,12 +15,12 @@ active
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Company Information </h1>
+            <h1>Create Slider </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('manage/info') }}">Manage Company Information</a></li>
-              <li class="breadcrumb-item active">Create Company Information</li>
+              <li class="breadcrumb-item"><a href="{{ route('manage/slider') }}">Manage Slider</a></li>
+              <li class="breadcrumb-item active">Create Slider</li>
             </ol>
           </div>
         </div>
@@ -43,61 +43,20 @@ active
                </button>
               </div>
             @endif
-            {{-- @if ($errors->any())
-              <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-             </div>
-           @endif --}}
-            <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Company Information</h3>
+                <h3 class="card-title">Create Slider</h3>
               </div>
              <!-- /.card-header -->
               <!-- form start -->
 
-              <form id="quickForm" action="{{ route('store/info') }}"  method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="{{ route('store/slider') }}"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="name">Company Logo1</label>
-                    <input type="file" name="company_logo1" class="form-control @error('company_logo1') is-invalid @enderror" id="name" placeholder="Company Logo1" >
-                    @error('company_logo1')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
-                    </div>
-                    @enderror
-
-
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Company Logo2</label>
-                    <input type="file" name="company_logo2" class="form-control" id="name" placeholder="Company Logo2">
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Email</label>
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
-                    @error('email')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
-                    </div>
-                    @enderror
-
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Phone Number</label>
-                    <input type="text" name="number" class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
-                    @error('number')
+                    <label for="name">Slider</label>
+                    <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="name" placeholder="Slider" >
+                    @error('image')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
@@ -107,9 +66,9 @@ active
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="name">Address</label>
-                    <input type="address" name="address" class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
-                    @error('address')
+                    <label for="name">Title1</label>
+                    <input type="text" name="title1" class="form-control @error('title1') is-invalid @enderror" id="name" placeholder="Title1" >
+                    @error('title1')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
@@ -117,7 +76,18 @@ active
                        </button>
                     </div>
                     @enderror
-
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Title2</label>
+                    <input type="text" name="title2" class="form-control @error('title2') is-invalid @enderror" id="name" placeholder="Title2" >
+                    @error('title2')
+                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color:white !important;">&times;</span>
+                       </button>
+                    </div>
+                    @enderror
                   </div>
                   <div class="form-group mb-0">
                     {{-- <div class="custom-control custom-checkbox">

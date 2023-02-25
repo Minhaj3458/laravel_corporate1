@@ -31,8 +31,6 @@ Route::get('/services', [App\Http\Controllers\Frontend\HomeController::class, 's
 Route::get('/mission', [App\Http\Controllers\Frontend\HomeController::class, 'mission'])->name('mission');
 Route::get('/vission', [App\Http\Controllers\Frontend\HomeController::class, 'vission'])->name('vission');
 Route::get('/team_members', [App\Http\Controllers\Frontend\HomeController::class, 'team_members'])->name('team_members');
-Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('');
-
 
 //backend route
 
@@ -52,4 +50,36 @@ Route::group(['prefix' => 'author'], function () {
   //company information
   Route::get('create/info', [App\Http\Controllers\Backend\Company_infoController::class, 'create'])->name('create/info');
   Route::post('store/info', [App\Http\Controllers\Backend\Company_infoController::class, 'store'])->name('store/info');
+  Route::get('manage/info', [App\Http\Controllers\Backend\Company_infoController::class, 'index'])->name('manage/info');
+  Route::get('edit/info/{id}', [App\Http\Controllers\Backend\Company_infoController::class, 'edit'])->name('edit/info');
+  Route::post('update/info/{id}', [App\Http\Controllers\Backend\Company_infoController::class, 'update'])->name('update/info');
+  Route::get('delete/info/{id}', [App\Http\Controllers\Backend\Company_infoController::class, 'destroy'])->name('delete/info');
+
+  //slider
+  Route::get('create/slider', [App\Http\Controllers\Backend\SliderController::class, 'create'])->name('create/slider');
+  Route::post('store/slider', [App\Http\Controllers\Backend\SliderController::class, 'store'])->name('store/slider');
+  Route::get('manage/slider', [App\Http\Controllers\Backend\SliderController::class, 'index'])->name('manage/slider');
+  Route::get('edit/slider/{id}', [App\Http\Controllers\Backend\SliderController::class, 'edit'])->name('edit/slider');
+  Route::post('update/slider/{id}', [App\Http\Controllers\Backend\SliderController::class, 'update'])->name('update/slider');
+  Route::get('delete/slider/{id}', [App\Http\Controllers\Backend\SliderController::class, 'destroy'])->name('delete/slider');
+
+  //company achievement
+  Route::get('create/achiev', [App\Http\Controllers\Backend\Company_achievementController::class, 'create'])->name('create/achiev');
+  Route::post('store/achiev', [App\Http\Controllers\Backend\Company_achievementController::class, 'store'])->name('store/achiev');
+  Route::get('manage/achiev', [App\Http\Controllers\Backend\Company_achievementController::class, 'index'])->name('manage/achiev');
+  Route::get('edit/achiev/{id}', [App\Http\Controllers\Backend\Company_achievementController::class, 'edit'])->name('edit/achiev');
+  Route::post('update/achiev/{id}', [App\Http\Controllers\Backend\Company_achievementController::class, 'update'])->name('update/achiev');
+  Route::get('delete/achiev/{id}', [App\Http\Controllers\Backend\Company_achievementController::class, 'destroy'])->name('delete/achiev');
+
+  //about us
+  Route::get('create/about', [App\Http\Controllers\Backend\About_usController::class, 'create'])->name('create/about');
+  Route::post('store/about', [App\Http\Controllers\Backend\About_usController::class, 'store'])->name('store/about');
+  Route::get('manage/about', [App\Http\Controllers\Backend\About_usController::class, 'index'])->name('manage/about');
+  Route::get('edit/about/{id}', [App\Http\Controllers\Backend\About_usController::class, 'edit'])->name('edit/about');
+  Route::post('update/about/{id}', [App\Http\Controllers\Backend\About_usController::class, 'update'])->name('update/about');
+  Route::get('delete/about/{id}', [App\Http\Controllers\Backend\About_usController::class, 'destroy'])->name('delete/about');
+
+  //Our services
+  Route::get('create/service', [App\Http\Controllers\Backend\Our_serviceController::class, 'create'])->name('create/service');
+  Route::post('store/service', [App\Http\Controllers\Backend\Our_serviceController::class, 'store'])->name('store/service');
 });

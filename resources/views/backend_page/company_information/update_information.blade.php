@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 @section('title')
-create company information
+update company information
 @endsection
 @section('company_information')
 active
@@ -15,12 +15,12 @@ active
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Company Information </h1>
+            <h1>Update Company Information </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('manage/info') }}">Manage Company Information</a></li>
-              <li class="breadcrumb-item active">Create Company Information</li>
+              <li class="breadcrumb-item active">Update Company Information</li>
             </ol>
           </div>
         </div>
@@ -55,12 +55,12 @@ active
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Company Information</h3>
+                <h3 class="card-title">Update Company Information</h3>
               </div>
              <!-- /.card-header -->
               <!-- form start -->
 
-              <form id="quickForm" action="{{ route('store/info') }}"  method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="{{ route('update/info',$info->id) }}"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -83,7 +83,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Email</label>
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
+                    <input type="email" name="email" value={{$info->email}} class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
                     @error('email')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -96,7 +96,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Phone Number</label>
-                    <input type="text" name="number" class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
+                    <input type="text" name="number" value={{$info->number}} class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
                     @error('number')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -108,7 +108,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Address</label>
-                    <input type="address" name="address" class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
+                    <input type="address" name="address" value={{$info->address}} class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
                     @error('address')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@ active
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary h3">Create </button>
+                  <button type="submit" class="btn btn-primary h3">Update</button>
                 </div>
               </form>
             </div>

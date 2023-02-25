@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/')}}" class="brand-link">
       <!-- <img src="{{ asset('assets/backend/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <span class="brand-text font-weight-light">Creative Construction</span>
+      <span class="brand-text font-weight-light">Corporate</span>
     </a>
       <!-- Sidebar admin -->
     <div class="sidebar">
@@ -145,7 +145,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('manage/media')}}" class="nav-link @yield('manage_company_information')">
+                <a href="{{ route('manage/info')}}" class="nav-link @yield('manage_company_information')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Company Information</p>
                 </a>
@@ -153,6 +153,103 @@
 
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link @yield('slider')">
+             <i class="fa fa-user"></i>
+              <p>
+                Slider
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+             <li class="nav-item">
+                <a href="{{ route('create/slider')}}" class="nav-link @yield('create_slider')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Slider</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('manage/slider')}}" class="nav-link @yield('manage_slider')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Slider</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link @yield('achievement')">
+             <i class="fa fa-user"></i>
+              <p>
+                Company Achievement <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+             <li class="nav-item">
+                <a href="{{ route('create/achiev')}}" class="nav-link @yield('create_achievement')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Achievement</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('manage/achiev')}}" class="nav-link @yield('manage_achievement')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Achievement</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link @yield('about')">
+             <i class="fa fa-user"></i>
+              <p>
+                About <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+             <li class="nav-item">
+                <a href="{{ route('create/about')}}" class="nav-link @yield('create_about')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create About </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('manage/about')}}" class="nav-link @yield('manage_about')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage About</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link @yield('service')">
+             <i class="fa fa-user"></i>
+              <p>
+               Our Service <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+             <li class="nav-item">
+                <a href="{{ route('create/service')}}" class="nav-link @yield('create_service')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Service </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('manage/about')}}" class="nav-link @yield('manage_service')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Service</p>
+                </a>
+              </li>
+
+            </ul>
+        </li>
 
 
 
