@@ -82,4 +82,33 @@ Route::group(['prefix' => 'author'], function () {
   //Our services
   Route::get('create/service', [App\Http\Controllers\Backend\Our_serviceController::class, 'create'])->name('create/service');
   Route::post('store/service', [App\Http\Controllers\Backend\Our_serviceController::class, 'store'])->name('store/service');
+  Route::get('manage/service', [App\Http\Controllers\Backend\Our_serviceController::class, 'index'])->name('manage/service');
+  Route::get('edit/service/{id}', [App\Http\Controllers\Backend\Our_serviceController::class, 'edit'])->name('edit/service');
+  Route::post('update/service/{id}', [App\Http\Controllers\Backend\Our_serviceController::class, 'update'])->name('update/service');
+  Route::get('delete/service/{id}', [App\Http\Controllers\Backend\Our_serviceController::class, 'destroy'])->name('delete/service');
+
+  //plan
+  Route::get('create/plan', [App\Http\Controllers\Backend\PlanController::class, 'create'])->name('create/plan');
+  Route::post('store/plan', [App\Http\Controllers\Backend\PlanController::class, 'store'])->name('store/plan');
+  Route::get('manage/plan', [App\Http\Controllers\Backend\PlanController::class, 'index'])->name('manage/plan');
+  Route::get('edit/plan/{id}', [App\Http\Controllers\Backend\PlanController::class, 'edit'])->name('edit/plan');
+  Route::post('update/plan/{id}', [App\Http\Controllers\Backend\PlanController::class, 'update'])->name('update/plan');
+  Route::get('delete/plan/{id}', [App\Http\Controllers\Backend\PlanController::class, 'destroy'])->name('delete/plan');
+
+  //pricing plan
+  Route::get('create/pricing_plan', [App\Http\Controllers\Backend\Pricing_planController::class, 'create'])->name('create/pricing_plan');
+  Route::post('store/pricing_plan', [App\Http\Controllers\Backend\Pricing_planController::class, 'store'])->name('store/pricing_plan');
+  Route::get('manage/pricing_plan', [App\Http\Controllers\Backend\Pricing_planController::class, 'index'])->name('manage/pricing_plan');
+  Route::get('edit/pricing_plan/{id}', [App\Http\Controllers\Backend\Pricing_planController::class, 'edit'])->name('edit/pricing_plan');
+  Route::post('update/pricing_plan/{id}', [App\Http\Controllers\Backend\Pricing_planController::class, 'update'])->name('update/pricing_plan');
+  Route::get('delete/pricing_plan/{id}', [App\Http\Controllers\Backend\Pricing_planController::class, 'destroy'])->name('delete/pricing_plan');
+
+  //Testimonial
+  Route::get('create/testimonial', [App\Http\Controllers\Backend\TestimonialController::class, 'create'])->name('create/testimonial');
+  Route::post('store/testimonial', [App\Http\Controllers\Backend\TestimonialController::class, 'store'])->name('store/testimonial');
+  Route::get('manage/testimonial', [App\Http\Controllers\Backend\TestimonialController::class, 'index'])->name('manage/testimonial');
+  Route::get('edit/testimonial/{id}', [App\Http\Controllers\Backend\TestimonialController::class, 'edit'])->name('edit/testimonial');
+  Route::post('update/testimonial/{id}', [App\Http\Controllers\Backend\TestimonialController::class, 'update'])->name('updatet/testimonial');
+  Route::get('delete/testimonial/{id}', [App\Http\Controllers\Backend\TestimonialController::class, 'destroy'])->name('delete/testimonial');
+
 });

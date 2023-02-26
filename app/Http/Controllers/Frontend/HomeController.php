@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Backend\Plan;
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend_pages.index');
+        $plan = Plan::latest()->get();
+        return view('frontend_pages.index',compact('plan'));
     }
     public function about()
     {

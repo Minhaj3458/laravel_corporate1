@@ -242,14 +242,85 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('manage/about')}}" class="nav-link @yield('manage_service')">
+                <a href="{{ route('manage/service')}}" class="nav-link @yield('manage_service')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Service</p>
                 </a>
-              </li>
-
+            </li>
             </ul>
-        </li>
+          </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('plan')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Plan <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/plan')}}" class="nav-link @yield('create_plan')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Plan </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/plan')}}" class="nav-link @yield('manage_plan')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Plan</p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('pricing_plan')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Pricing Plan <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/pricing_plan')}}" class="nav-link @yield('create_pricing_plan')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Pricing Plan </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/pricing_plan')}}" class="nav-link @yield('manage_pricing_plan')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Pricing Plan</p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('testimonial')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Testimonial <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/testimonial')}}" class="nav-link @yield('create_testimonial')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Testimonial </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/testimonial')}}" class="nav-link @yield('manage_testimonial')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Testimonial</p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
 
 
 

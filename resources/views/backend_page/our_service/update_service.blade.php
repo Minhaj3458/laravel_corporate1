@@ -1,7 +1,7 @@
 
 @extends('layouts.backend.app')
 @section('title')
-create our service
+update our service
 @endsection
 @section('service')
 active
@@ -16,12 +16,12 @@ active
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Service </h1>
+            <h1>Update Service </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('manage/service') }}">Manage Service</a></li>
-              <li class="breadcrumb-item active">Create Service</li>
+              <li class="breadcrumb-item active">Update Service</li>
             </ol>
           </div>
         </div>
@@ -46,17 +46,17 @@ active
             @endif
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Service</h3>
+                <h3 class="card-title">Update Service</h3>
               </div>
              <!-- /.card-header -->
               <!-- form start -->
 
-              <form id="quickForm" action="{{ route('store/service') }}"  method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="{{ route('update/service',$service->id) }}"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Title</label>
-                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="name" placeholder="Title" >
+                    <input type="text" name="title" value="{{ $service->title }}" class="form-control @error('title') is-invalid @enderror" id="name" placeholder="Title" >
                     @error('title')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Description</label>
-                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="name" placeholder="Description" >
+                    <input type="text" name="description" value="{{ $service->description }}" class="form-control @error('description') is-invalid @enderror" id="name" placeholder="Description" >
                     @error('description')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -99,7 +99,7 @@ active
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary h3">Create </button>
+                  <button type="submit" class="btn btn-primary h3">Update </button>
                 </div>
               </form>
             </div>

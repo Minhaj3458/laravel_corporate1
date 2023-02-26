@@ -1,12 +1,11 @@
-
 @extends('layouts.backend.app')
 @section('title')
-create our service
+create Testimonial
 @endsection
-@section('service')
+@section('testimonial')
 active
 @endsection
-@section('create_service')
+@section('create_testimonial')
 active
 @endsection
 
@@ -16,12 +15,12 @@ active
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Service </h1>
+            <h1>Create Testimonial </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('manage/service') }}">Manage Service</a></li>
-              <li class="breadcrumb-item active">Create Service</li>
+              <li class="breadcrumb-item"><a href="{{ route('manage/testimonial') }}">Manage Testimonial</a></li>
+              <li class="breadcrumb-item active">Create Testimonial</li>
             </ol>
           </div>
         </div>
@@ -46,42 +45,54 @@ active
             @endif
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Service</h3>
+                <h3 class="card-title">Create Testimonial</h3>
               </div>
              <!-- /.card-header -->
               <!-- form start -->
 
-              <form id="quickForm" action="{{ route('store/service') }}"  method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="{{ route('store/testimonial') }}"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="name">Title</label>
-                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="name" placeholder="Title" >
-                    @error('title')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
-                    </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Description</label>
-                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="name" placeholder="Description" >
-                    @error('description')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
-                    </div>
-                    @enderror
-                  </div>
                   <div class="form-group">
                     <label for="name">Image</label>
                     <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="name" placeholder="Slider" >
                     @error('image')
+                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color:white !important;">&times;</span>
+                       </button>
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Client Name </label>
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" >
+                    @error('name')
+                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color:white !important;">&times;</span>
+                       </button>
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Profession</label>
+                    <input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror" id="name" placeholder="Profession" >
+                    @error('profession')
+                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color:white !important;">&times;</span>
+                       </button>
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" data-placeholder="Enter Description" cols="4" rows="4" class="form-control @error('description') is-invalid @enderror" maxlength="300"></textarea>
+                    @error('description')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
