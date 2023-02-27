@@ -227,6 +227,30 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link @yield('choose_us')">
+             <i class="fa fa-user"></i>
+              <p>
+                Choose Us <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+             <li class="nav-item">
+                <a href="{{ route('create/choose_us')}}" class="nav-link @yield('create_choose_us')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Choose Us </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('manage/choose_us')}}" class="nav-link @yield('manage_choose_us')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Choose Us</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link @yield('service')">
              <i class="fa fa-user"></i>
               <p>
@@ -321,6 +345,127 @@
 
                </ul>
             </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('team_member')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Team Member <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/team_member')}}" class="nav-link @yield('create_team_member')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Team Member </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/team_member')}}" class="nav-link @yield('manage_team_member')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Team Member</p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('category')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Blog Category <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/blog/category')}}" class="nav-link @yield('create_category')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Blog Category </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/blog/category')}}" class="nav-link @yield('manage_category')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Blog Category</p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('blog')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Blog<i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/blog')}}" class="nav-link @yield('create_blog')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Blog </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/blog')}}" class="nav-link @yield('manage_blog')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Blog </p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('blog_comment')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Blog Comment<i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/blog')}}" class="nav-link @yield('create_blog_comment')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Blog </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/blog')}}" class="nav-link @yield('manage_blog_comment')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Blog </p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link @yield('brand')">
+                 <i class="fa fa-user"></i>
+                  <p>
+                   Brand <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                    <a href="{{ route('create/brand')}}" class="nav-link @yield('create_brand')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Create Brand</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('manage/brand')}}" class="nav-link @yield('manage_brand')">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Brand </p>
+                    </a>
+                </li>
+
+               </ul>
+            </li>
+
 
 
 

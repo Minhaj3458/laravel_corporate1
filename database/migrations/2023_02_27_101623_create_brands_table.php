@@ -11,24 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_infos', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->string('company_logo1');
-            $table->string('company_logo2')->nullable();
-            $table->string('email');
-            $table->string('number');
-            $table->string('address');
-            $table->text('description');
+            $table->string('image');
+            $table->string('brand_name');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_info_controllers');
+        Schema::dropIfExists('brands');
     }
 };

@@ -1,11 +1,12 @@
+
 @extends('layouts.backend.app')
 @section('title')
-create company information
+update blog
 @endsection
-@section('company_information')
+@section('blog')
 active
 @endsection
-@section('create_company_information')
+@section('create_blog')
 active
 @endsection
 
@@ -15,12 +16,12 @@ active
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Create Company Information </h1>
+            <h1>Update Blog </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('manage/info') }}">Manage Company Information</a></li>
-              <li class="breadcrumb-item active">Create Company Information</li>
+              <li class="breadcrumb-item"><a href="{{ route('manage/blog') }}">Manage Blog</a></li>
+              <li class="breadcrumb-item active">Create Blog</li>
             </ol>
           </div>
         </div>
@@ -43,61 +44,38 @@ active
                </button>
               </div>
             @endif
-            {{-- @if ($errors->any())
-              <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-             </div>
-           @endif --}}
-            <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Create Company Information</h3>
+                <h3 class="card-title">Update Blog</h3>
               </div>
              <!-- /.card-header -->
               <!-- form start -->
 
-              <form id="quickForm" action="{{ route('store/info') }}"  method="POST" enctype="multipart/form-data">
+              <form id="quickForm" action="{{ route('update/blog',$blog->id)}}"  method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="name">Company Logo1</label>
-                    <input type="file" name="company_logo1" class="form-control @error('company_logo1') is-invalid @enderror" id="name" placeholder="Company Logo1" >
-                    @error('company_logo1')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
+                    <div class="form-group">
+                        <label for="name">Blog Category Name</label>
+                        <select name="blog_category_id" class="form-control select2 @error('blog_category_id') is-invalid @enderror" style="width: 100%;">
+                            @foreach ( $blog_cat as $show )
+                              <option value="{{$show->id}}" @if ($blog->blog_category_id == $show->id)
+                                selected
+                              @endif>{{ $show->category_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('blog_category_id')
+                        <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                            <strong>{{ $message }}</strong>
+                            <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color:white !important;">&times;</span>
+                           </button>
+                        </div>
+                        @enderror
                     </div>
-                    @enderror
-
-
-                  </div>
                   <div class="form-group">
-                    <label for="name">Company Logo2</label>
-                    <input type="file" name="company_logo2" class="form-control" id="name" placeholder="Company Logo2">
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Email</label>
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
-                    @error('email')
-                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
-                        <strong>{{ $message }}</strong>
-                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true" style="color:white !important;">&times;</span>
-                       </button>
-                    </div>
-                    @enderror
-
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Phone Number</label>
-                    <input type="text" name="number" class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
-                    @error('number')
+                    <label for="name">Title</label>
+                    <input type="text" name="title" value="{{ $blog->title }}" class="form-control @error('title') is-invalid @enderror" id="name" placeholder="Title" >
+                    @error('title')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
@@ -107,9 +85,9 @@ active
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="name">Address</label>
-                    <input type="address" name="address" class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
-                    @error('address')
+                    <label for="name">Image</label>
+                    <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="name" placeholder="Slider" >
+                    @error('image')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
                         <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
@@ -117,11 +95,10 @@ active
                        </button>
                     </div>
                     @enderror
-
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" data-placeholder="Enter Description" cols="4" rows="4" class="form-control @error('description') is-invalid @enderror" maxlength="300"></textarea>
+                    <textarea name="description" id="description" data-placeholder="Enter Description" cols="8" rows="8" class="form-control @error('description') is-invalid @enderror" >{{ $blog->description }} </textarea>
                     @error('description')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -140,7 +117,7 @@ active
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary h3">Create </button>
+                  <button type="submit" class="btn btn-primary h3">Update</button>
                 </div>
               </form>
             </div>
