@@ -34,7 +34,7 @@ class Company_infoController extends Controller
             'email' => 'required|max:255',
             'number' => 'required|max:15',
             'address' => 'required|max:300',
-            'description' => 'required|max:300',
+            'description' => 'required|max:400',
             'company_logo1' => 'required|max:255',
         ]);
 
@@ -93,7 +93,7 @@ class Company_infoController extends Controller
         $validated = $request->validate([
             'email' => 'required|max:255',
             'number' => 'required|max:15',
-            'description' => 'required|max:300',
+            'description' => 'required|max:400',
             'address' => 'required|max:300',
         ]);
 

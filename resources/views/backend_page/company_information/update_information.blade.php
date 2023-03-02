@@ -83,7 +83,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Email</label>
-                    <input type="email" name="email" value={{$info->email}} class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
+                    <input type="email" name="email" value="{{$info->email}}" class="form-control @error('email') is-invalid @enderror" id="name" placeholder="Email" >
                     @error('email')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -96,7 +96,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Phone Number</label>
-                    <input type="text" name="number" value={{$info->number}} class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
+                    <input type="text" name="number" value="{{$info->number}}" class="form-control @error('number') is-invalid @enderror " id="name" placeholder="Number" >
                     @error('number')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -108,7 +108,7 @@ active
                   </div>
                   <div class="form-group">
                     <label for="name">Address</label>
-                    <input type="address" name="address" value={{$info->address}} class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
+                    <input type="address" name="address" value="{{$info->address}}" class="form-control @error('address') is-invalid @enderror" id="name"  placeholder="Address" >
                     @error('address')
                     <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
                         <strong>{{ $message }}</strong>
@@ -117,7 +117,18 @@ active
                        </button>
                     </div>
                     @enderror
-
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" data-placeholder="Enter Description" cols="4" rows="4" class="form-control @error('description') is-invalid @enderror" >{{$info->description}}</textarea>
+                    @error('description')
+                    <div class="alert alert-danger alert-dismissible fade show" style="padding:5px;" role="alert">
+                        <strong>{{ $message }}</strong>
+                        <button type="button" class="close" style="padding:5px; color:white !important;" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color:white !important;">&times;</span>
+                       </button>
+                    </div>
+                    @enderror
                   </div>
                   <div class="form-group mb-0">
                     {{-- <div class="custom-control custom-checkbox">

@@ -58,6 +58,7 @@ active
                     <th>Email</th>
                     <th>Number</th>
                     <th>Address</th>
+                    <th>Description</th>
                     <th>Create Date</th>
                     <th>Update Date</th>
                     <th>Action</th>
@@ -77,6 +78,7 @@ active
                     <td>{{$show->email}}</td>
                     <td>{{$show->number}}</td>
                     <td>{{$show->address}}</td>
+                    <td>{{Str::limit($show->description, 50)}}</td>
                     <td>{{$show->created_at->format('Y-m-d h:i:s')}}</td>
                     <td>{{$show->updated_at->format('Y-m-d h:i:s')}}</td>
                     <td>
@@ -106,6 +108,7 @@ active
                     <th>Email</th>
                     <th>Number</th>
                     <th>Address</th>
+                    <th>Description</th>
                     <th>Create Date</th>
                     <th>Update Date</th>
                     <th>Action</th>

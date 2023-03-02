@@ -10,18 +10,28 @@
     <div class="row gx-0">
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
-                <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
+                @if ($company_info)
+                  @foreach ($company_info->take(1) as $show)
+                  <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ $show->address }}</small>
+                  <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $show->number }}</small>
+                  <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $show->email }}</small>
+                  @endforeach
+                @endif
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                @if ($social_media)
+                   @foreach ($social_media->take(1) as $show)
+                   <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ $show->twitter }}"><i class="fab fa-twitter fw-normal"></i></a>
+                   <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ $show->facebook }}"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ $show->linkdin }}"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                   <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ $show->instagram }}"><i class="fab fa-instagram fw-normal"></i></a>
+                   <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="{{ $show->youtube }}"><i class="fab fa-youtube fw-normal"></i></a>
+                   @endforeach
+
+                @endif
+
             </div>
         </div>
     </div>
